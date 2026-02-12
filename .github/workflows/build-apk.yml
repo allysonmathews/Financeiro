@@ -1,5 +1,4 @@
 name: Build APK
-
 on:
   push:
     branches:
@@ -9,27 +8,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: 📂 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "npm"
+          node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
+      - name: 📦 Install dependencies
+        run: npm install
 
-      - name: Install EAS CLI
+      - name: 🛠️ Install EAS CLI
         run: npm install -g eas-cli
 
-      - name: Authenticate with Expo
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      - name: 🔑 Authenticate with Expo
         run: eas whoami --non-interactive
-
-      - name: Build Android APK
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: eas build --platform android --profile preview --non-interactive
+
+      - name: 🚀 Build Android APK
+        run: eas build --platform android --profile preview --non-interactive --local
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📥 Upload APK to GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: meu-aplicativo-apk
+          path: ./*.apk
