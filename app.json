@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Financeiro",
+    "slug": "financeiro",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "financeiro",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.financeiro.app"
+    },
+    "android": {
+      "package": "com.financeiro.app"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-asset",
+      "expo-font"
+    ]
+  }
+}

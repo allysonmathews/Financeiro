@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Environment (nunca commitar chaves reais)
+.env
+.env.local
+.env.*.local
+
+# Expo / Build
+.expo/
+dist/
+web-build/
+
+# Debug / OS
+*.log
+.DS_Store
