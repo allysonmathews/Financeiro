@@ -22,6 +22,15 @@
       "expo-router",
       "expo-asset",
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "487df423-6aea-4cf6-b306-7fd8c89560a8"
+      }
+    },
+    "owner": "biluverso"
   }
 }
